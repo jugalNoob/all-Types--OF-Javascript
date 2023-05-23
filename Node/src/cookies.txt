@@ -1,0 +1,33 @@
+1683974084928: 1683974129462: GET  1683974167071: GET / 1683974276953: ::1 GET / 1683974295998: ::1 / GET / 
+ 1683974323819: ::1 / GET / 
+ \
+
+
+
+
+ const express = require("express");
+const fs = require("fs");
+const app = express();
+const port = 9000;
+const multer  = require('multer')
+const upload = multer({ dest: 'uploads/' })
+var jwt = require('jsonwebtoken');
+var token = jwt.sign({ foo: 'jugal sharma jwt' }, 'shhhhh');
+
+
+var decoded = jwt.verify(token, 'shhhhh');
+console.log(decoded.foo) // bar
+app.use("" , (req , res)=>{
+
+    console.log("jugal")
+
+    res.send("jugal")
+
+
+    res.status(201).status("ljkhaj")
+})
+
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});

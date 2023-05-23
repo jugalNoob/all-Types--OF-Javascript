@@ -1,0 +1,87 @@
+let a=["jugal" , "karan" , "knaika" , "anku"]
+
+// let[top1 , top2 , top3 , top4]=a
+let[top1 ,,,top2 ]=a
+console.log(top2)
+
+
+const name="jugal"
+name="sharma"
+console.log(name) // 
+
+const name="jugal"
+name="sharma"
+console.log(name)
+
+const name="jugal" // fixed value use const
+name="sharma"
+console.log(name)
+
+
+function loved(love){ // function scope
+
+    if(love){ // block scope
+
+        let name="jugal"
+
+        const sname="sharma"
+
+        console.log(name , sname)
+    } // block scope
+}//function scope
+
+loved(true)
+
+function loved(love){ // function scope
+
+    if(love){ // block scope
+
+        let name="jugal"
+
+      let sname="sharma"
+
+        // console.log(name , sname)
+    } // block scope
+    console.log(name , sname)
+}//function scope
+
+loved(true)
+
+
+|||||||||||Arrow function ||||||||||||||
+
+const one=()=>{
+    console.log("hello")
+}
+one()
+
+let res=function (){
+    console.log("normal function")
+}
+
+console.log(res())
+
+
+const one=()=> console.log("jugsal")
+
+one()
+
+
+|||||||||||||||Objecty |||||||||||||
+const object = {
+  name: null,
+  roll: undefined,
+  class: "10tj"
+};
+
+for (let key in object) {
+  if (object[key] === undefined || object[key] === null) {
+    delete object[key];
+  }
+}
+
+console.log(object); // { class: "10tj" }
+
+
+|||||||||///Rest & spread operator |||||||||||||
+

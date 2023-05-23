@@ -1,0 +1,152 @@
+import React,{useReducer, useState, createContext} from 'react'
+import Cat from './page/Cat'
+
+
+const Datas=createContext();
+
+function App() {
+  const [data, setData]=useState("createContectApijugalsharma")
+
+
+  return (
+    <div>
+    <Datas.Provider value={data}>
+
+
+    <h1>iosahj</h1>
+      <h1></h1>
+      <Cat/>
+      </Datas.Provider>
+    </div>
+  )
+}
+
+export default App
+
+export {Datas}
+
+import React,{useState,useContext} from 'react'
+
+import { Datas } from '../App'
+
+
+function Cat() {
+  const Datass=useContext(Datas)
+  return (
+    <div>
+
+      <h1>{Datass}</h1>
+    </div>
+  )
+}
+
+export default Cat
+
+||||||||||||||||||||||||||||||||||
+
+import React,{useReducer, useState, createContext} from 'react'
+import Cat from './page/Cat'
+
+
+const Datas=createContext();
+const nameObject=createContext()
+
+function App() {
+  const [data, setData]=useState("createContectApijugalsharma")
+  const [name , setName]=useState({name:"jugal sharma" , roll:32})
+  return (
+    <div>
+    <nameObject.Provider value={name}>
+
+
+    <Datas.Provider value={data}>
+    <h1>iosahj</h1>
+      <h1></h1>
+      <Cat/>
+      </Datas.Provider>
+      </nameObject.Provider>
+    </div>
+  )
+}
+
+export default App
+
+export {Datas,nameObject}
+
+
+import React,{useState,useContext} from 'react'
+
+import { Datas } from '../App'
+
+import { nameObject } from '../App'
+
+function Cat() {
+  const Datass=useContext(Datas)
+
+  const names=useContext(nameObject)
+  return (
+    <div>
+
+      <h1>{Datass}</h1>
+      <h1>{names.name}</h1>
+      <h1>{names.roll}</h1>
+ 
+
+    </div>
+  )
+}
+
+export default Cat
+
+
+|||||||||||||||||Use Content use SetUpadte values||||||||||||||||||
+
+import React, { createContext, useState } from 'react';
+import One from "./page/One";
+
+const userData = createContext();
+
+function App() {
+  const [one, setOne] = useState({ name: "jugal", roll: 63 });
+
+  const updateOne = (updatedData) => {
+    setOne(updatedData);
+  };
+
+  return (
+    <div>
+      <userData.Provider value={{ one, updateOne }}>
+        <One />
+      </userData.Provider>
+    </div>
+  );
+}
+
+export default App;
+export { userData };
+
+
+
+
+
+import React, { useContext } from 'react';
+import { userData } from '../App';
+
+function One() {
+  const { one, updateOne } = useContext(userData);
+
+  const handleButtonClick = () => {
+    const updatedData = { name: 'Updated Name', roll: 123 };
+    updateOne(updatedData);
+  };
+
+  return (
+    <div>
+      <h1>{one.name}</h1>
+      <p>Roll: {one.roll}</p>
+      <button onClick={handleButtonClick}>Update Data</button>
+    </div>
+  );
+}
+
+export default One;

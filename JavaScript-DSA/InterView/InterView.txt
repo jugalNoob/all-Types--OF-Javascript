@@ -1,0 +1,655 @@
+
+Performance summary table
+Graph of Big O Notation
+
+
+||Operating of data structure|||||||||
+
+.Traversal
+.insertion
+.deletion
+.searching
+.sorting
+.merging
+.heap
+.map
+.set
+.Linked
+.Ques
+.stacks
+||||||||||||||||Looping |||||||||||||||||||||||||||
+
+let i = 0;
+do {
+  console.log(i);
+  i++;
+} while (i < 10);
+
+
+|||||||||BinearSearch Trees|||||||||||||||||||||||
+
+
+
+
+
+|||||||deletion||||||||||||||
+
+.Under issue and solution with whiteBoard
+.make array define the position 
+.use loop to delet element
+.delet element with txt input and button
+let data = [10, 20, 30];
+let del = 0; // index of the element to be removed
+
+// Remove the element at the specified index
+data.splice(del, 1);
+
+console.log(data); // Output: [20, 30]
+
+//Delete interView 
+let data=[10 , 20 , 30]
+let del=0; // position
+let del=document.gurila().value;
+
+del=parseInt(del)
+for(let i=del; i<data.length; i++){
+    data[i]=data[i+1]
+
+    // data[10]=data[20]
+}
+data.length=data.length-1
+console.log(data)
+
+  <input type="text" name="" id="position" placeholder="">
+    <button onclick="remove()">click</button>
+
+
+||||||||||||Searching ||||||||||||||||||||||||||
+
+function linearSearch(arr, x) {
+  for(let i = 0; i < arr.length; i++) {
+    if(arr[i] === x) {
+      return i; // element found, return index
+    }
+  }
+  return -1; // element not found
+}
+
+// Example usage
+let arr = [10, 20, 30, 40, 50];
+let x = 30;
+let index = linearSearch(arr, x);
+
+if(index !== -1) {
+  console.log(`Element found at index ${index}`);
+} else {
+  console.log(`Element not found`);
+}
+
+
+let data=[80 , 650 , 71, 6. , 70]
+let newEl=80;
+let poit=undefined;
+for(let i=0; i<data.length-1; i++){
+    if(newEl=== data[i]){
+        data[i]====paraInt(newEl)
+        poit=i
+    }
+}
+console.log(poit)
+console.log(data.indexOf(newEl))
+data.splice(2 , 1)
+index ,upadate, delete 
+console.log(data)
+||||||||||||||||||||||||||||||||||
+
+Merage Arrays |||||||||||||||||||||||||||
+
+let data1=[10 , 20 , 30 , 40]
+let data2=[50 , 60 ,70, 80]
+let data3=[]
+
+
+for(let i=0; i<data1.length; i++){
+    data3[i]=data1[i]
+}
+
+for(let i=0; i<data2.length; i++){
+    data3[data1.length+i]=data2[i]
+}
+console.log(data3)
+
+
+||||||||||Reverse||||||||||||||||||||||||
+let data=[10 , 20 , 30 , 70]
+let start=0;
+let end=data.length-1;
+while(start<end){
+let temp=data[start]
+data[start]=data[end]
+data[end]=temp
+
+start++
+end--
+}
+console.log(data)
+
+
+Minimum
+///////////////////////////////////
+let data=[10 , 20 , 30 , 40 ];
+let mini=data[0];
+for(let i=0; i<data.length; i++){
+    if(data[i] > mini){
+        mini=data[i];
+    }
+}
+console.log(mini)
+
+
+//////////////////////////////////////
+splitting
+let originalArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+let newArray1 = [];
+let newArray2 = [];
+
+for (let i = 0; i < originalArray.length; i++) {
+  if (originalArray[i] <= 5) {
+    newArray1.push(originalArray[i]);
+  } else {
+    newArray2.push(originalArray[i]);
+  }
+}
+
+console.log(newArray1); // [1, 2, 3, 4, 5]
+console.log(newArray2); // [6, 7, 8, 9]
+
+Inserting///
+/////////////////////||||||||||
+let data=[ 9 , 8 , 7 , 6 , 5 , 4 , 3 , 2 , 1,0,100 ]
+
+console.log(data.length)
+let add=69;
+
+let post=0;
+
+for(let i=data.length-1; i>=0; i--){
+
+    if(i>=post){
+        
+        data[i+1]=data[i]
+    }if(i==post){
+
+        data[i]=add;
+    }
+
+}
+
+console.log(data)
+
+
+/////////////////////////Anagram||||||||||||||||||||||||
+function  checkAnnar(str1 , str2){
+
+    let objectstr={};
+if(str1.length !== str2.length){
+    return false;
+}
+for(ch of str1){
+    // console.log(ch)
+    objectstr[ch]=(objectstr[ch] || 0) + 1;
+}
+// console.log(objectstr)
+for(ch of str2){
+    // console.log(objectstr[ch])
+    if(!objectstr[ch]){
+        return false  
+    }
+objectstr[ch]--
+}
+return true
+// console.log(objectstr)
+
+}
+// console.log(  checkAnnar("hello" , "olle"))
+
+console.log(  checkAnnar([1 , 2 , 3], [3 , 2 , 1,0]))
+
+
+
+///////////////////////////
+Fisher-Yates Shuffer Algo
+/////////////////////////////
+
+function fisherYatesShuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+  const myArray = [1, 2, 3, 4, 5];
+  const shuffledArray = fisherYatesShuffle(myArray);
+  console.log(shuffledArray); // Output: [5, 2, 4, 1, 3] (random order)
+
+
+Palindrome string 
+///////////////////////////
+function pali(data){
+let start=0;
+let end=data.length -1;
+let result=true;
+while(end>start){
+    if(data[start] !=data[end]){
+        result=false;
+    }
+    start++;
+    end--;
+}
+return result;
+}
+let str="hello"
+console.log(pali(str))
+
+/////////////////////////////
+Maximum occurring
+////////////////////////////
+let str="jugal hello world jjjj";
+let strObj={};
+let maxkey="";
+for(let i=0; i<str.length; i++){
+    let key=str[i];
+    if(!strObj[key]){
+
+strObj[key]=0;
+    }
+    strObj[key]++;
+    if(maxkey == "" || strObj[key] > strObj[maxkey]){
+        maxkey=key;
+    }  
+}
+console.log(maxkey)
+console.warn(strObj)
+
+////////Second string to array and array tot array //!SECTION
+
+
+const fruits = ["apple", "banana", "cherry"];
+const fruitsString = fruits.join(","); //
+
+
+const fruitsString = "apple,banana,cherry";
+const fruits = fruitsString.split(","); // ["apple", "banana", "cherry"]
+
+
+  const [user1 , setUser1] = useState([]);
+  const [user2 , setUser2] = useState([]);
+
+  const Swaper=()=>{
+    let array1 = [user1]; // make a copy of user1 array
+    let array2 = [user2]; // make a copy of user2 array
+    
+    // Print the original arrays
+    console.log("Array 1: " + array1);
+    console.log("Array 2: " + array2);
+    
+    // Swap the arrays using a loop
+    for (let i = 0; i < array1.length; i++) {
+      let temp = array1[i];
+      array1[i] = array2[i];
+      array2[i] = temp;
+    }
+
+    
+    // Print the swapped arrays
+    console.log("Swapped Array 1: " + array1);
+    console.log("Swapped Array 2: " + array2);
+  }
+ 
+
+
+
+Binary Search with Iterative approac
+///////////////////////////////////////
+         let data = [5, 9, 13, 17,45,67,89,100];
+      let find = 89;
+      let start = 0;
+      let end = data.length - 1;
+      let position = undefined;
+      while (start <= end) {
+        let mid = Math.floor((start + end) / 2);
+        // console.warn(data[mid]);
+        if (data[mid] === find) {
+          position = mid;
+          break;
+        } else if (data[mid] < find) {
+          start = mid + 1;
+        } else {
+          end = mid - 1;
+        }
+      }
+      console.warn(position)
+
+
+
+|||||||||Sort Bubble|||||||||||||||||||||||||
+
+size == 4 *4
+
+let data=[9 , 8 , 7 ,6]
+for(let i=0; i<data.length; i++){
+    for(let j=0; j<data.length; j++){
+        if(data[j] > data[j+1]){  /// if(data[9] > data[8])
+            let temp=data[j] // data[9] // temp 9
+            data[j]=data[j+1] // data[9]=data[8]
+            data[j+1]=temp // data[8] // temp  9
+        }
+    console.log(data)
+    }
+}
+
+
+let data=[9 , 8 , 7 ,6]
+
+
+for(let i=0; i<data.length; i++){
+
+    for(let j=0; j<data.length; j++){
+
+        console.log(1)
+    }
+}
+
+let a=9;
+let b=10
+console.log(a , b)
+let temp=a;
+a=b;
+b=temp;
+console.log(a , b)
+|||||||||||
+let a=10;
+let b=9;
+[a , b]=[b , a]
+console.log(a , b)
+
+||||||||||||||||||||||selection Sort  asending order sorting|||||||||||||||||||
+
+let data=[20 , 12 , 53 , 3]
+
+function selection(){
+let minId;
+    for(let i=0; i<data.length; i++){
+        minId=i; // 20
+        for(let j=i+1; j<data.length; j++){ //  j 12 and i+1  20
+            if(data[j]<data[minId]){ // data[12] data[20] 
+                minId=j; //  j 12
+            }
+        }
+        let temp=data[minId]
+        data[minId]=data[i]
+        data[i]=temp
+        // console.log(data[i])
+    }
+
+}
+
+selection(data)
+console.log(data)
+
+
+
+
+|||||||||selection Descending order sorting |||||||||||||||||
+.recap selection sorting
+.two ways of descending sorting
+.implemnet descending sorting both ways
+
+|||||esending order number [ 1 , 2 , 3 , 4 , 5 ,6]
+
+||||descending order number [6 , 5 , 4 , 3 , 2 , 1]
+let data=[20 , 12 , 53 , 3 ,69 , 80 , 70]
+function selection(){
+let minId;
+    for(let i=0; i<data.length; i++){
+        minId=i; // 20
+        for(let j=i+1; j<data.length; j++){ //  j 12 and i+1  20
+            if(data[j]>data[minId]){ // data[12] data[20] 
+                minId=j; //  j 12
+            }
+        }
+        let temp=data[minId]
+        data[minId]=data[i]
+        data[i]=temp
+        // console.log(data[i])
+    }
+}
+selection(data)
+console.log(data)
+
+
+|||||||||||||insertion Sort||||||||||||||||||||||||||
+
+let arr = [12, 11, 13, 5, 6];
+function insertionSort(data) {
+  let i, current, j;
+  for (i = 1; i < data.length; i++) {
+          // console.log(1)
+        // console.log(i)
+        //console.log(data[i])
+    current = data[i];
+    j = i - 1;
+    while(j>=0 && data[j]>current){
+      data[j+1]=data[j];
+      j=j-1;
+    }
+    data[j+1]=current
+  }
+}
+
+insertionSort(arr);
+console.warn(arr)
+
+
+||||||||||||||||||||||||
+
+function swap(arr, i, j) {
+  const temp = arr[i];
+  arr[i] = arr[j];
+  arr[j] = temp;
+}
+
+const arr = [1, 2, 3, 4, 5];
+swap(arr, 1, 3);
+console.log(arr); // Output: [1, 4, 3, 2, 5]
+
+
+|||||||quick Sort ||||||||||||||||||||||
+
+let myArray = [3, 7, 2, 5, 1, 4, 6, 8];
+console.log(quicksort(myArray)); // Output: [1,2,3,4,5,6,7,8]
+
+
+function quickSort(arr) {
+  if (arr.length < 2) return arr
+  let pivot = arr[arr.length - 1]
+  let left = []
+  let right = []
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] < pivot) {
+      left.push(arr[i])
+    } else {
+      right.push(arr[i])
+    }
+  }
+  return [...quickSort(left), pivot, ...quickSort(right)]
+}
+
+const arr = [8, 20, -2, 4, -6]
+console.log(quickSort(arr)) // [-6, -2, 4, 8, 20]
+
+
+
+||||||||||||Merge sort||||||||||||||||||||
+
+function merge(left, right) {
+  let sortedArr = [] // the sorted items will go here
+  while (left.length && right.length) {
+    // Insert the smallest item into sortedArr
+    if (left[0] < right[0]) {
+      sortedArr.push(left.shift())
+    } else {
+      sortedArr.push(right.shift())
+    }
+  }
+  // Use spread operators to create a new array, combining the three arrays
+  return [...sortedArr, ...left, ...right]
+}
+merge([1, 4], [2, 6, 9]) // [1, 2, 4, 6, 9]
+
+
+
+|||||||||Prime Number check||||||||||||||||||
+
+function isPrime(n) {
+  if (n < 2) {
+    return false
+  }
+  for (let i = 2; i <= Math.sqrt(n); i++) {
+    // if n is divisible by any number then it is not prime
+    if (n % i === 0) {
+      return false
+    }
+  }
+  return true
+}
+
+console.log(isPrime(1)) // false
+console.log(isPrime(5)) // true
+console.log(isPrime(4)) // false
+
+
+|||||||||||||||  Math numbers |||||||||||||||||||||||
+
+function isOdd(num) {
+  // An odd number is not divisible by 2
+  for (let i = 3; i < num; i += 2) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+
+  // If no divisor is found, num is odd
+  return num % 2 !== 0;
+}
+
+
+function isPrime(num) {
+  if (num < 2) {
+    return false;
+  }
+
+  // Check if num is divisible by any number other than 1 and itself
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+
+  // If no divisor is found, num is prime
+  return true;
+}
+
+
+||||||||Fibonacci |||||||||||||||||||||||||||||
+
+function fibonacci(n) {
+  const fib = [0, 1]
+  for (let i = 2; i <= n; i++) {
+    fib[i] = fib[i - 1] + fib[i - 2]
+  }
+  return fib
+}
+
+console.log(fibonacci(2)) // [0,1]
+console.log(fibonacci(3)) // [0,1,1]
+console.log(fibonacci(7)) // [0,1,1,2,3,5,8]
+
+
+|||||||||||fibonacci-recursive.js||||||||||||||||||
+
+function recursiveFibonacci(n) {
+  if (n < 2) {
+    return n
+  }
+  return recursiveFibonacci(n - 1) + recursiveFibonacci(n - 2)
+}
+
+console.log(recursiveFibonacci(0)) // 0
+console.log(recursiveFibonacci(1)) // 1
+console.log(recursiveFibonacci(7)) // 8
+
+
+||||||||||||||Factorial.js ||||||||||||||||||
+function factorial(n) {
+  let result = 1
+  for (let i = 2; i <= n; i++) {
+    result = result * i
+  }
+  return result
+}
+console.log(factorial(0)) // 1
+console.log(factorial(1)) // 1
+console.log(factorial(5)) // 120
+
+
+|||||||||||Factorial recursive||||||||||||||||||
+function recursiveFactorial(n) {
+  if (n === 0) {
+    return 1
+  }
+  return n * recursiveFactorial(n - 1)
+}
+console.log(recursiveFactorial(0)) // 1
+console.log(recursiveFactorial(1)) // 1
+console.log(recursiveFactorial(5)) // 120
+
+
+
+////////MAP|||||||||||||||||
+
+
+//Map use key and value
+
+//    let data=new Map([
+//     ["name" , "jugal"],
+//     [true , "book key"],
+//     [100 , "hynder"]
+//    ]);
+//    data.set("color" , "blue")
+
+//    console.log(data)
+//    console.warn(data.size)
+//    console.log(data.has(100))
+//    console.log(data.get(100))
+   //data.clear()
+
+
+||||||||||Set javascript |||||||||||||||||||||||
+       const letters = new Set(["a","b","c"]);
+          letters.add("kanika")
+          letters.add({"email":"jugal@gmail.com"})
+console.log(letters)
+console.warn(letters.has("a"))
+console.log(letters.size)
+//data.clear()
+letters.delete("a")
+for(x of letters){
+    console.log(x)
+}
+
+console.log(letters.keys())
+
+console.log(letters.values())
+
+console.log(letters.entries())

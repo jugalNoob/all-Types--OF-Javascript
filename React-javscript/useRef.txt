@@ -1,0 +1,81 @@
+import React,{useState,useRef} from 'react'
+
+function App() {
+  const inputref=useRef(null)
+
+  const Clicks=()=>{
+
+    console.log("fvfgd")
+    inputref.current.value=100;
+    // inputref.current.focus();
+    inputref.current.style.color="red";
+    inputref.current.focus();
+    inputref.current.style.border="2px solid red"
+
+  }
+  return (
+    <div>
+
+          {/* useRef Hook line start row class */}
+    
+    <input type="text" ref={inputref} name="" id="" />
+
+<button onClick={Clicks}>handinput</button>
+    </div>
+  )
+}
+
+export default App
+
+
+
+||||||||||||||||||||||||||||||||||||
+
+import React, { useRef } from 'react';
+
+function MultiRefExample() {
+  const nameInputRef = useRef(null);
+  const emailInputRef = useRef(null);
+  const passwordInputRef = useRef(null);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const name = nameInputRef.current.value;
+    const email = emailInputRef.current.value;
+    const password = passwordInputRef.current.value;
+
+    console.log('Form submitted with the following values:');
+    console.log('Name:', name);
+    console.log('Email:', email);
+    console.log('Password:', password);
+
+    // Reset form
+    nameInputRef.current.value = '';
+    emailInputRef.current.value = '';
+    passwordInputRef.current.value = '';
+  };
+
+  return (
+    <div>
+      <h2>Register</h2>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="name">Name:</label>
+          <input ref={nameInputRef} type="text" id="name" />
+        </div>
+        <div>
+          <label htmlFor="email">Email:</label>
+          <input ref={emailInputRef} type="email" id="email" />
+        </div>
+        <div>
+          <label htmlFor="password">Password:</label>
+          <input ref={passwordInputRef} type="password" id="password" />
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  );
+}
+
+export default MultiRefExample;

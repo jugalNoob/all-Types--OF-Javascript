@@ -1,0 +1,70 @@
+1::This call apply bind
+
+2:Debouncing 
+
+3:thrttling
+
+4:iterable and iterator protocals
+
+5:array like vs iterable
+
+6:Map
+
+7:Set
+
+8:WeakMap and WeakSet
+
+9:Generotors
+
+10:PolyFills
+
+11:CallBack Hell
+
+12:Promise Api
+
+13:Asynchronuse javascript
+
+14:Block scopes & let /const
+
+14:global objects
+
+15:IIFE
+
+16:Curring
+
+17:Symbol data types
+
+18:function Objects
+
+19:function scopes and lexical enviromnet
+
+20:Hostion
+
+21:Shallow copy and deep copy
+
+22::decorator pattern Memozation
+
+
+
+1::Variables and data types
+2::Operators
+3::Control structures (if/else, loops, switch)
+4::Functions and functional programming
+5::Arrays and objects
+6::DOM manipulation and event handling
+7::Asynchronous programming (callbacks, promises, async/await)
+8::ES6 features (arrow functions, template literals, let/const, classes)
+9::Error handling
+10::Regular expressions
+11::Higher-order functions
+12::Closures
+13::Prototypal inheritance and classes
+14::Modules and namespaces
+15::AJAX and APIs
+16::Web storage (localStorage, sessionStorage)
+17::Debugging techniques
+18::Testing frameworks (Jasmine, Mocha)
+19::Performance optimization
+20::Security best practices.
+21::Asynchronous JavaScript: In addition to callbacks, promises and async/await, advanced 
+22:: such as linked lists, stacks, queues, trees, and graphs. 

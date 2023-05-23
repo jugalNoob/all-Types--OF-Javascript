@@ -1,0 +1,67 @@
+const pro = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      let a = [10, 20, 30, 40, 50];
+      resolve(a);
+    }, 3000);
+  });
+};
+
+const executeAsync = async () => {
+  try {
+    const result = await pro();
+    console.log(result);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+executeAsync();
+let a = "jugal";
+let stringObject = new String(a);
+console.log(Object.getPrototypeOf(stringObject));
+
+
+
+const str = 'Hello, world!';
+
+console.log('String length:', str.length);
+console.log('String slice(7, 12):', str.slice(7, 12));
+console.log('String substring(7, 12):', str.substring(7, 12));
+console.log('String substr(7, 5):', str.substr(7, 5));
+console.log('String replace("world", "John"):', str.replace('world', 'John'));
+console.log('String replaceAll("l", "L"):', str.replaceAll('l', 'L'));
+console.log('String toUpperCase():', str.toUpperCase());
+console.log('String toLowerCase():', str.toLowerCase());
+console.log('String concat(" Goodbye!"):', str.concat(' Goodbye!'));
+console.log('String indexOf("o"):', str.indexOf('o'));
+console.log('String lastIndexOf("o"):', str.lastIndexOf('o'));
+console.log('String search(/world/):', str.search(/world/));
+console.log('String match(/l+/g):', str.match(/l+/g));
+console.log('String matchAll(/l+/g):', Array.from(str.matchAll(/l+/g)));
+console.log('String includes("world"):', str.includes('world'));
+console.log('String startsWith("Hello"):', str.startsWith('Hello'));
+console.log('String endsWith("!"):', str.endsWith('!'));
+
+
+
+|||||||||||||||||||||||||||||||||||
+
+
+String length: 13
+String slice(7, 12): world
+String substring(7, 12): world
+String substr(7, 5): world
+String replace("world", "John"): Hello, John!
+String replaceAll("l", "L"): HeLLo, worLd!
+String toUpperCase(): HELLO, WORLD!
+String toLowerCase(): hello, world!
+String concat(" Goodbye!"): Hello, world! Goodbye!
+String indexOf("o"): 4
+String lastIndexOf("o"): 8
+String search(/world/): 7
+String match(/l+/g): [ 'l', 'l', 'l' ]
+String matchAll(/l+/g): [ [ 'l' ], [ 'll' ] ]
+String includes("world"): true
+String startsWith("Hello"): true
+String endsWith("!"): true

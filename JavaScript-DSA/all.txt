@@ -1,0 +1,93 @@
+//Prototypes are mechanism by which javascript objects inheriet featres from one another
+
+// object.prototype.myappes="jugal sharma"
+
+
+
+let user={
+
+    getFullname:function(){
+    
+        return this.name+ " " + this.lastName
+    },
+
+    getAge:function(){
+
+        let age=new Date().getFullYear()-this.birth
+    
+        return age
+    }
+
+}
+
+let student={
+name:"jugal",
+lastName:"sidhu",
+birth:2000,
+getAge:user.getAge
+
+
+}
+
+
+
+let teacher={
+    name:"jonny",
+    lastName:"sins",
+    birth:1980, 
+    getAge:user.getAge // same teacher.__proto__=user;
+  
+
+  
+    }
+
+//     teacher.__proto__=user;
+//    student.__proto__=user;
+
+
+   
+
+    console.log(teacher.getAge())
+    console.log(student.getAge())
+
+
+
+
+//lexical scop|||||||||||||||||||||||||||
+
+
+let a={
+    list:"friend",
+    name:['bruce' , "peter" , "sam"],
+
+    getAll:function(){
+
+        // console.log(this.list)
+
+        // let that=this.list;
+
+        this.name.map((items)=>{
+
+            console.log(this.list,items)
+        })
+    }
+}
+
+
+a.getAll()
+// console.log(a.getAll())
+
+
+var name="jugal sharma";
+
+function two(){
+
+    var name="jugal";
+
+    console.log(name)
+}
+
+
+two();
+
+console.log(name)

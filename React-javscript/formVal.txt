@@ -1,0 +1,99 @@
+
+|||||||||Fome error sat
+
+
+const [name, setName] = useState("");
+const [nameError, setNameError] = useState("");
+
+const validateName = () => {
+  if (!name) {
+    setNameError("Name is required.");
+  } else if (name.length < 3) {
+    setNameError("Name must be at least 3 characters long.");
+  } else {
+    setNameError("");
+  }
+};
+{ nameError && <div className="error">{nameError}</div> }
+
+
+<input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+<input type="text" value={name} onChange={(e) => setName(e.target.value)} onBlur={validateName} />
+
+
+||||||||||||||||||||||||||||||||||||
+
+|||||||||||||||||||||||||||||||||||||||
+
+
+// import React, { useState } from 'react';
+
+// function App() {
+//   const [user, setUser] = useState({
+//     name: "",
+//     email: "",
+//     password: ""
+//   });
+
+//   const [errors, setErrors] = useState({});
+
+//   const handleChange = (e) => {
+//     const { name, value } = e.target;
+//     setUser(prevUser => ({
+//       ...prevUser,
+//       [name]: value
+//     }));
+//     setErrors(prevErrors => ({
+//       ...prevErrors,
+//       [name]: ''
+//     }));
+//   };
+
+//   const handleValidation = () => {
+//     let errors = {};
+
+//     if (!user.name) {
+//       errors.name = "Please enter your name";
+//     } else if (user.name.length < 3) {
+//       errors.name = "Name should be at least 3 characters long";
+//     } else if (!isNaN(user.name)) {
+//       errors.name = "Name should contain at least one character";
+//     }
+
+//     if (!user.password) {
+//       errors.password = "Please enter your password";
+//     } else if (user.password.length < 3) {
+//       errors.password = "Password should be at least 3 characters long";
+//     } else if (isNaN(user.password)) {
+//       errors.password = "Password should contain at least one character";
+//     }
+
+//     setErrors(errors);
+//   };
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     handleValidation();
+//   };
+
+//   return (
+//     <div>
+//       <form onSubmit={handleSubmit}>
+//         <input type="text" name="name" value={user.name} onChange={handleChange} placeholder="Enter your name"   style={{ borderColor: errors.name && "red" }}/>
+//         {errors.name && <p>{errors.name}</p>}
+//         <br />
+
+//         <input type="text" name="email" value={user.email} onChange={handleChange} placeholder="Enter your email" />
+//         <br />
+
+//         <input type="password" name="password" value={user.password} onChange={handleChange} placeholder="Enter your password"    style={{ borderColor: errors.password && "red" }}/>
+//         {errors.password && <p>{errors.password}</p>}
+//         <br />
+
+//         <button type="submit">Submit</button>
+//       </form>
+//     </div>
+//   );
+// }
+
+// export default App;

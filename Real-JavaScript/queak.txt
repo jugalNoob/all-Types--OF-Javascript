@@ -1,0 +1,65 @@
+//Inmplementing memoiztion in javascript
+///Memoization is an optimization technique that can be used to reduce
+//time-consuming calculation by saving previous inputs to somthing called and
+//returning the result for it
+
+
+// Function to be memoized
+
+
+let data=[];
+
+let current=data.length;
+
+
+function eque(values){
+
+    data[current]=values
+current++
+}
+
+
+
+function dequea(){
+
+    for(let i=0; i<data.length; i++){
+
+    data[i]=data[i+1]
+
+
+        // console.log(data[i])
+    }
+
+    current --
+
+    data.length=current
+}
+
+
+function display(){
+
+    console.log(data)
+
+    // for(let i=0; i<data.length; i++){
+
+    //     console.log(data[i])
+    // }
+}
+
+
+eque(10)
+
+eque(20)
+
+eque(30)
+
+eque(40)
+
+eque(50)
+
+dequea()
+
+dequea()
+dequea()
+
+display()

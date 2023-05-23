@@ -1,0 +1,142 @@
+// typeof "John"                 // Returns "string"
+// typeof 3.14                   // Returns "number"
+// typeof NaN                    // Returns "number"
+// typeof false                  // Returns "boolean"
+// typeof [1,2,3,4]              // Returns "object"
+// typeof {name:'John', age:34}  // Returns "object"
+// typeof new Date()             // Returns "object"
+// typeof function () {}         // Returns "function"
+// typeof myCar                  // Returns "undefined" *
+// typeof null                   // Returns "object"
+
+Qwhat is Null and undefined?
+
+Ans:let a="jugal sharma"
+let b;
+console.warn(typeof(b))
+let d=null;
+console.log(b == d)
+console.log(typeof(d))
+
+let y=null;
+
+console.log(y)
+console.log(typeof(y)) //null nothing it is bugs show objects
+
+
+console.log(null == undefined) // true
+
+console.log(undefined === null) // false check dataType
+
+|||In JavaScript undefined means a variable has been declared 
+:but has not yet been assigned a value
+
+
+//null is assignment value.
+//it can be assigned to variable as reperstation of no value
+
+
+
+
+
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+String - used to represent textual data, such as "Hello, World!".
+Number - used to represent numerical data, such as 42 or 3.14.
+Boolean - used to represent true or false values.
+Undefined - represents a value that has not been assigned to a variable or object property.
+Null - represents a deliberate non-value or absence of any object value.
+Symbol (added in ES6) - used to create unique identifiers for object properties.
+
+Sure! Here are some common interview questions related to JavaScript data types:
+
+::1||What are the primitive data types in JavaScript?
+
+
+2::|||The primitive data types in JavaScript are: string, number, boolean, null, undefined, and symbol.
+
+
+3::||What is the difference between null and undefined?
+
+
+4::||Undefined means a variable has been declared but has not yet been assigned a value, while null is an assignment value that represents no value or no object.
+
+
+5::||What is the difference between == and === in JavaScript?
+
+
+6::||The double equals (==) compares values after converting data types if needed, while triple equals (===) compares both values and data types.
+
+
+7::||What is the difference between let, const, and var?
+8::||let and const were introduced in ES6 and have block-level scoping, while var has function-level scoping. const is used for values that won't be reassigned, while let can be reassigned.
+9::||What is the difference between objects and arrays?
+10::||An object is a collection of properties, while an array is a collection of values. Objects use keys to access their properties, while arrays use indices.
+I hope these questions and answers help you prepare for your interview!
+
+
+
+
+|||||||||||||||||
+
+:::operators
+////////////////////////////////////////
+.arithmetic// console.log(5+20);
+console.log(10-5);
+console.log(20/5);
+console.log(5*6);
+
+
+.comparison
+//////////////////////////////////
+ console.log(a == b);
+ Greater than or equal (>=)
+ console.log(a >= b);
+ Less than or equal (<=)
+ console.log(a <= b);
+ Not equal (!=)
+ console.log(a != b);
+
+
+.logical
+/////////////////////////////////////////////
+ console.log(a > b && b > -50 && b < 0); |||| 
+ 
+  console.log((a < b) || (b > 0) || (b > 0));  |||||||
+
+  
+ console.log(!((a>0) || (b<0)));
+ console.log(!true);
+
+
+// var x = 5; 
+// var y = 5;
+
+// console.log("is both the x and y are equal or not" + x == y );
+
+// I will tell you when we will see es6
+// console.log(`Is both the x and y are equal : ${x == y}`);
+
+x.toString()
+(123).toString()
+(100 + 23).toString()
+
+let one;
+
+console.log(one)
+
+let one=null;
+
+console.log(one)
+
+
+let one="jugal"
+console.log(one)
+
+let one=55
+
+console.log(one)
+
+
+let one=45
+
+console.log(isNaN(one))

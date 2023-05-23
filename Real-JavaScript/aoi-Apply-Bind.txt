@@ -1,0 +1,82 @@
+||||||||||API Fetch |||||||||||
+
+import React, { useState, useEffect } from 'react';
+
+function App() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch('https://api.example.com/data');
+      const jsonData = await response.json();
+      setData(jsonData);
+    }
+    fetchData();
+  }, []);
+
+  if (!data) {
+    return <div>Loading...</div>;
+  }
+
+  return (
+    <div>
+      <h1>{data.title}</h1>
+      <p>{data.description}</p>
+    </div>
+  );
+}
+
+export default App;
+
+
+|||||||||||||||||||||||||||
+
+
+////////////////////////////Call , Apply , Bind in javascript
+different in all of these
+
+what is special in bind?
+
+why can make a simple function?
+
+///Call function meaing is function reusable  in object operator
+
+
+let start={
+
+    firstname:"jugal sharma",
+    lastname:"kanika sharma",
+    age:30,
+
+    getEmail:function(){
+        return `${this.firstname} ${this.lastname}@test.com`
+    }
+}
+let end={
+
+    firstname:"peter",
+    lastname:"parker",
+    age:30,
+
+  
+}
+function getEmail(){
+    return this.email= `${this.firstname} ${this.lastname}@test.com`
+}
+
+function ChooseEmail(sub1 , sub2){
+//     return `${this.firstname} ${this.lastname}@test.com`
+return sub1 + sub2
+
+}
+
+// console.log(getEmail.apply(end))
+// console.log(start.getEmail.call(end)) -->> any type of parm
+// console.log(ChooseEmail.apply(end, [" method " , " english "]))// -->> only array type of para
+// let all=getEmail.bind(end) //bind create a function but not call()
+// console.log(all())
+
+
+
+console.log(getEmail.apply(end))
+console.log(end)

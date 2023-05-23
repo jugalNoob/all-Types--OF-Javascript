@@ -1,0 +1,89 @@
+:::operators
+////////////////////////////////////////
+.arithmetic// console.log(5+20);
+console.log(10-5);
+console.log(20/5);
+console.log(5*6);
+
+
+.comparison
+//////////////////////////////////
+ console.log(a == b);
+ Greater than or equal (>=)
+ console.log(a >= b);
+ Less than or equal (<=)
+ console.log(a <= b);
+ Not equal (!=)
+ console.log(a != b);
+
+
+.logical
+/////////////////////////////////////////////
+ console.log(a > b && b > -50 && b < 0);
+
+  console.log((a < b) || (b > 0) || (b > 0));
+
+  
+ console.log(!((a>0) || (b<0)));
+ console.log(!true);
+
+
+// var x = 5; 
+// var y = 5;
+
+// console.log("is both the x and y are equal or not" + x == y );
+
+// I will tell you when we will see es6
+// console.log(`Is both the x and y are equal : ${x == y}`);
+
+x.toString()
+(123).toString()
+(100 + 23).toString()
+
+let one;
+
+console.log(one)
+
+let one=null;
+
+console.log(one)
+
+
+let one="jugal"
+console.log(one)
+
+let one=55
+
+console.log(one)
+
+
+let one=45
+
+console.log(isNaN(one))
+
+
+///////////////////////////////////////////////////////
+1. Variables
+2. Data Types
+..Null
+..Undifined
+..Boolean
+..string
+..number
+..Arrays
+..Object
+..NaN
+.BigNumber
+let x = Number.MAX_VALUE;
+
+
+typeof "John"                 // Returns "string"
+typeof 3.14                   // Returns "number"
+typeof NaN                    // Returns "number"
+typeof false                  // Returns "boolean"
+typeof [1,2,3,4]              // Returns "object"
+typeof {name:'John', age:34}  // Returns "object"
+typeof new Date()             // Returns "object"
+typeof function () {}         // Returns "function"
+typeof myCar                  // Returns "undefined" *
+typeof null                   // Returns "object"

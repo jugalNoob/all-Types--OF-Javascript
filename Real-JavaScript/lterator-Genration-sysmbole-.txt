@@ -1,0 +1,134 @@
+///Travsrings measing travel
+
+:|while
+
+:|do while
+
+:|for of 
+
+:|for in
+
+:|for each
+
+:|map
+
+:|.ilerators ||||||||||||||||||||
+
+let data=[100 , 20 , 300 , 400]
+
+console.log(typeof data[Symbol.iterator])
+
+
+let data=[100 , 20 , 300 , 400]
+
+let one= data[Symbol.iterator]()
+
+// console.log(one.next())
+// console.log(one.next())
+// console.log(one.next())
+// console.log(one.next())
+// console.log(one.next())
+one.next()
+console.log(one.next())
+console.log(one.next().value)
+console.log(one.next().done)
+
+
+||||||Loop||||||||||||||||
+
+// let data=[100 , 20 , 300 , 400]
+
+let str="Yehoo baba"
+let one= str[Symbol.iterator]()
+let result=one.next()
+while(!result.done){
+console.log(result.value)
+result=one.next()
+}
+
+
+
+console.log("jugal")
+
+
+//make a own iterator
+
+
+function numberiterator(arr){
+    var nextnum=0;
+    return {
+        next(){
+            if(nextnum<arr.length){
+                return {
+                    value:arr[nextnum++],
+                  done:false
+                }
+            }else{
+
+return{
+
+    done:true
+}
+            }
+          
+            }
+        }
+    }
+
+let number=[100 , 20 , 300 , 400]
+let num=numberiterator(number)
+console.log(num.next())
+console.log(num.next())
+console.log(num.next())
+console.log(num.next())
+console.log(num.next())
+
+
+||||||Generator function|||||||||||||||||||
+
+//generator function in javascript
+//
+
+function* simple(){
+
+    console.log("jugal sharma")
+    let x="1000"
+    yield "first step"
+    yield x
+    yield y="othrers"
+    console.log("last function")
+}
+
+let simpleyei=simple()
+function simpless(){
+
+
+    console.log(simpleyei.next())
+
+    document.getElementById("newId").innerText=10
+    // console.log(simpleyei.next())
+    // console.log(simpleyei.next())
+    // console.log(simpleyei.next())
+}
+
+
+function* simple(){
+let i=1000
+while(true){
+    i++
+    yield i
+}
+    console.log("last function")
+}
+let simpleyei=simple()
+function simpless(){
+    console.log(simpleyei.next())
+    document.getElementById("newId").innerText=10
+    // console.log(simpleyei.next())
+    // console.log(simpleyei.next())
+    // console.log(simpleyei.next())
+}
+
+
+||||||||||||Sysmbole --- ||||||||||||||||
+

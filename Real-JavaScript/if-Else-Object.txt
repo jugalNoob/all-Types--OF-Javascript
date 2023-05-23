@@ -1,0 +1,109 @@
+
+|||||||||||||If-else||||||||||||||||
+
+const age = 25;
+const hasLicense = true;
+const isDrunk = false;
+
+if (age >= 18 && hasLicense) {
+  console.log("You are allowed to drive.");
+} else if (age < 18) {
+  console.log("You are too young to drive.");
+} else if (age >= 18 && !hasLicense) {
+  console.log("You need a license to drive.");
+} else if (isDrunk) {
+  console.log("You cannot drive while under the influence of alcohol.");
+} else {
+  console.log("You are not allowed to drive for an unknown reason.");
+}
+
+
+1::Ternary operator with multiple conditions:
+
+const age = 25;
+const hasLicense = true;
+
+const allowedToDrive = age >= 18 && hasLicense ? "You are allowed to drive." : "You are not allowed to drive.";
+console.log(allowedToDrive);
+
+
+2::const x = 10;
+const y = 5;
+
+if (x > y) {
+  console.log("x is greater than y.");
+} else {
+  if (x < y) {
+    console.log("x is less than y.");
+  } else {
+    console.log("x is equal to y.");
+  }
+}
+
+3::Switch statement:
+
+const day = "Monday";
+
+switch (day) {
+  case "Monday":
+    console.log("Today is Monday.");
+    break;
+  case "Tuesday":
+    console.log("Today is Tuesday.");
+    break;
+  case "Wednesday":
+    console.log("Today is Wednesday.");
+    break;
+  case "Thursday":
+    console.log("Today is Thursday.");
+    break;
+  case "Friday":
+    console.log("Today is Friday.");
+    break;
+  default:
+    console.log("Invalid day.");
+}
+
+
+||||||||||||||||||||||||||||||||||
+
+
+
+//object///////////////////////////////////////////////////////////////
+let phone=123123123;
+
+const a={
+    name:'jugal sharma',
+    class:"10trh",
+    age:22,
+    phone:phone,
+    getData:function(){
+        // return "data is line"
+        return this.city
+
+    },
+
+    ineer:{
+        names:"kanika sharma",
+        classes:"12th"
+    }
+
+}
+
+//changes
+a.name="kanran"
+//deletes
+delete a.ineer
+//add values
+a.city="mimam"
+a['pin code']=181123
+console.log(a.name)
+console.log(a)
+console.log("city" in a)
+console.log(a.getData())
+// console.log(a.ineer.names)
+
+for(item in a){
+    console.warn(item)
+    console.log("key" + a[item])
+}

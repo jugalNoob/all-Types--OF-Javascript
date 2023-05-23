@@ -1,0 +1,128 @@
+const cars = ["Saab", "Volvo", "BMW"];
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.pop();
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.push("Kiwi");
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.shift();
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.unshift("Lemon");
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits[0] = "Kiwi";
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits[fruits.length] = "Kiwi";
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+delete fruits[0];
+
+
+const myGirls = ["Cecilie", "Lone"];
+const myBoys = ["Emil", "Tobias", "Linus"];
+
+const myChildren = myGirls.concat(myBoys);
+
+
+const arr1 = ["Cecilie", "Lone"];
+const arr2 = ["Emil", "Tobias", "Linus"];
+const arr3 = ["Robin", "Morgan"];
+const myChildren = arr1.concat(arr2, arr3);
+
+
+const myArr = [[1,2],[3,4],[5,6]];
+const newArr = myArr.flat();
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.sort();
+fruits.reverse();
+
+
+const d = new Date();
+
+const d = new Date("2022-03-25");
+
+
+||||||||||||||||||Map|||||||||||||||||||||||
+const fruits = new Map([
+  ["apples", 500],
+  ["bananas", 300],
+  ["oranges", 200]
+]);
+
+for (const x of fruits) {
+  // code block to be executed
+}
+
+
+||||||||||||||||||Set uSE ||||||||||||||||||||
+
+const letters = new Set(["a","b","c"]);
+
+for (const x of letters) {
+  // code block to be executed
+}
+
+||||||||||||||||Map array |||||||||||||||||||
+
+let data = ["jugal", "sharma", "knaika", "karan"];
+
+let result = data.map((element, index, array) => {
+  return [
+    "this is element ",
+    element,
+    "this is array ",
+    array,
+    "this index ",
+    index,
+  ];
+});
+
+console.log(result);
+
+|||||||||||Filter ||||||||||||||||||
+let data = [10 , 20 , 30 , 40 , 50];
+
+let reslt=data.filter((elem)=>{
+
+    return elem > 20
+})
+
+console.log(reslt)
+
+||||||||||||||||||||||FindIndex|||||||||||||||
+let data = [10 , 20 , 30 , 40 , 50];
+
+let reslt=data.findIndex((elem)=>{
+
+    return elem > 20
+})
+
+console.log(reslt)
+
+|||||||||||||||||||||Index array|||||||||||||||||||
+let data = [10 , 20 , 30 , 40 , 50];
+let reslt=data.find((elem)=>{
+    return elem > 20
+})
+console.log(reslt)
+
+
+||||||||||||||||||||||||||||
+
+let data = [10 , 20 , 30 , 40 , 50];
+let reslt=data.reduce((accum , elem)=>{
+
+    debugger
+    //accumulator 
+    //current value
+    //cureent index
+    // ||||||||return  accum
+  return accum + elem
+})
+
+console.log(reslt)

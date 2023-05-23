@@ -1,0 +1,46 @@
+||||||||||||||||||||||Certainly, here's an example of how to use the localStorage and sessionStorage Web Storage APIs in JavaScript:|||||||||||
+
+// set an item in localStorage
+localStorage.setItem('myItem', 'myValue');
+
+// get an item from localStorage
+const myValue = localStorage.getItem('myItem');
+
+// remove an item from localStorage
+localStorage.removeItem('myItem');
+
+// set an item in sessionStorage
+sessionStorage.setItem('myItem', 'myValue');
+
+// get an item from sessionStorage
+const myValue = sessionStorage.getItem('myItem');
+
+// remove an item from sessionStorage
+sessionStorage.removeItem('myItem');
+
+
+
+// set an object in localStorage
+const myObject = { name: 'John', age: 30 };
+localStorage.setItem('myObject', JSON.stringify(myObject));
+
+// get an object from localStorage
+const myObjectString = localStorage.getItem('myObject');
+const myObject = JSON.parse(myObjectString);
+
+// set an item in localStorage with expiration time
+const expiresAt = new Date().getTime() + 1000 * 60 * 60; // 1 hour from now
+localStorage.setItem('myItem', 'myValue');
+localStorage.setItem('myItem_expiresAt', expiresAt);
+
+// check if an item in localStorage has expired
+const expiresAt = localStorage.getItem('myItem_expiresAt');
+if (expiresAt && new Date().getTime() > expiresAt) {
+  localStorage.removeItem('myItem');
+  localStorage.removeItem('myItem_expiresAt');
+}
+
+// listen for changes to localStorage
+window.addEventListener('storage', function(event) {
+  console.log(`Key: ${event.key}, Old Value: ${event.oldValue}, New Value: ${event.newValue}`);
+});

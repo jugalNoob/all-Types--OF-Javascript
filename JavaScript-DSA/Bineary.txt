@@ -1,0 +1,79 @@
+console.log("let start linear search")
+console.log("bineary search iteartive")
+
+
+//No of input /2
+
+//Iterative use a loop 
+
+
+let data=[10 , 20 , 30 , 40] // bineary use a first sort bineary use in a sort array
+
+let find=20
+let  start=0;
+let end=data.length-1;
+let posit=undefined;
+
+
+while(start <= end){ // start queal to end  and  start point small to end
+    // let minds=Math.floor(data.length/2) data.length  4
+
+let mid=Math.floor((start+end) / 2) // start + end is 3
+
+ // console.log(mid) //divide number
+
+ //console.log(data[mid]) middle point
+
+
+ if(data[mid] === find){
+    posit=mid
+    break;
+ }else if(data[mid] < find){
+    start =mid+1
+ }else{
+end=mid-1
+ }
+}
+
+console.log(posit)
+
+
+console.log(Math.floor(Math.random()*100))
+
+
+// console.log(all)
+
+// let data = {
+//     name: "jugal",
+//     class: "10th",
+//     mask: 45,
+//     roll: 69,
+//     greet: function (greeting) {
+//         console.log(greeting, this.name);
+//     }
+// };
+
+// data.greet("Hello"); // Output: Hello jugal
+
+
+let obj={
+
+    name:"jugal sharma",
+
+    age:300,
+    class:"10th",
+
+}
+delete obj.class; // Deleting the "class" property
+obj.name="kanika"
+console.log("300" in obj)
+
+obj["pin code"]=181123
+console.log(obj.name)
+console.log(obj)
+
+
+for(let i in obj){
+
+    console.log(obj[i])
+}

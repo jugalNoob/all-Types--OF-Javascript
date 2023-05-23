@@ -1,0 +1,33 @@
+import React, { useState,useMemo } from 'react'
+
+function Memo() {
+
+    const [count , setCount]=useState(0);
+
+    const [item, setIteem]=useState(10);
+
+
+ const multiMemo=useMemo(function multiCoun(){
+
+    console.log("jkljhsdc")
+
+    return count *5;
+},[count])
+
+
+  return (
+    <div>
+      {/* useMemo */}
+      <h1>{count}</h1>
+    
+      <h1>{item}</h1>
+      <h1>{multiMemo}</h1>
+
+<button onClick={(e)=>setCount(count+1)}>click</button>
+
+<button onClick={(e)=>setIteem(item*5)}>update</button>
+    </div>
+  )
+}
+
+export default Memo

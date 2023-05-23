@@ -1,0 +1,244 @@
+var x = 5; // Initialize x
+var y;     // Declare y
+
+elem = document.getElementById("demo"); // Find an element
+elem.innerHTML = x + " " + y;           // Display x and y
+
+y = 7;    // Assign 7 to y\
+
+"use strict";
+
+||||||||||Use this key word
+
+const person = {
+  firstName: "John",
+  lastName : "Doe",
+  id       : 5566,
+  fullName : function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+
+
+
+|||||||Arrow function|||||||||||||||||||
+
+let myFunction = (a, b) => a * b;
+
+
+|||||||||||Class ||||||||||||||||||||
+
+class Car {
+  constructor(name, year) {
+    this.name = name;
+    this.year = year;
+  }
+  age() {
+    const date = new Date();
+    return date.getFullYear() - this.year;
+  }
+}
+
+const myCar = new Car("Ford", 2014);
+document.getElementById("demo").innerHTML =
+"My car is " + myCar.age() + " years old.";
+
+
+|||||||||Json parese||||||||||||
+
+const obj = JSON.parse('{"name":"John", "age":30, "city":"New York"}');
+
+
+const obj = {name: "John", age: 30, city: "New York"};
+
+const myJSON = JSON.stringify(obj);
+
+myJSON = '{"name":"John", "age":30, "car":null}';
+myObj = JSON.parse(myJSON);
+
+
+const myJSON = '{"name":"John", "age":30, "car":null}';
+const myObj = JSON.parse(myJSON);
+x = myObj.name;
+
+
+myJSON = '["Ford", "BMW", "Fiat"]';
+myArray = JSON.parse(myJSON);
+
+
+||||||Jvaascript cookies||||||||||||||||||
+
+document.cookie = "username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC";
+
+document.cookie = "username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
+
+A Function to Set a Cookie
+
+function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  let expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+
+
+||||||||||||||||||Alartes|||||||||||
+
+JavaScript Popup Boxes
+
+alert("I am an alert box!");
+
+if (confirm("Press a button!")) {
+  txt = "You pressed OK!";
+} else {
+  txt = "You pressed Cancel!";
+}
+
+
+let person = prompt("Please enter your name", "Harry Potter");
+let text;
+if (person == null || person == "") {
+  text = "User cancelled the prompt.";
+} else {
+  text = "Hello " + person + "! How are you today?";
+}
+
+
+|||||||||||function callBack ing ||||||||||||||
+
+JavaScript Callbacks
+
+function myFirst() {
+  myDisplayer("Hello");
+}
+
+function mySecond() {
+  myDisplayer("Goodbye");
+}
+
+myFirst();
+mySecond();
+
+
+
+|||||||||||||Class all function object|||||||||||||||||||
+
+
+class Car {
+  constructor(name, year) {
+    this.name = name;
+    this.year = year;
+  }
+  age(x) {
+    return x - this.year;
+  }
+}
+
+const date = new Date();
+let year = date.getFullYear();
+
+const myCar = new Car("Ford", 2014);
+document.getElementById("demo").innerHTML=
+"My car is " + myCar.age(year) + " years old.";
+
+class Car {
+  constructor(brand) {
+    this.carname = brand;
+  }
+  present() {
+    return 'I have a ' + this.carname;
+  }
+}
+
+class Model extends Car {
+  constructor(brand, mod) {
+    super(brand);
+    this.model = mod;
+  }
+  show() {
+    return this.present() + ', it is a ' + this.model;
+  }
+}
+
+let myCar = new Model("Ford", "Mustang");
+document.getElementById("demo").innerHTML = myCar.show();
+
+
+
+
+||||||||||||||||Objects protucties|||||||||||
+
+
+function Person(first, last, age, eyecolor) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eyecolor;
+}
+
+Person.prototype.nationality = "English";
+
+
+
+||||||||||CallBack Hell |||||||||||
+
+setTimeout(function() {
+  console.log('First callback');
+  setTimeout(function() {
+    console.log('Second callback');
+    setTimeout(function() {
+      console.log('Third callback');
+      // ... more nested callbacks ...
+    }, 1000);
+  }, 1000);
+}, 1000);
+
+
+Shallow copy and deep copy with code||||||||||||||||||||||||||||||
+
+
+const originalObject = { name: 'John', age: 30, address: { city: 'New York', state: 'NY' } };
+const shallowCopy = { ...originalObject };
+
+console.log(shallowCopy); // { name: 'John', age: 30, address: { city: 'New York', state: 'NY' } }
+
+shallowCopy.name = 'Mary';
+shallowCopy.address.city = 'Los Angeles';
+
+console.log(originalObject); // { name: 'John', age: 30, address: { city: 'Los Angeles', state: 'NY' } }
+console.log(shallowCopy); // { name: 'Mary', age: 30, address: { city: 'Los Angeles', state: 'NY' } }
+
+
+
+|||||||||||||||function scopes and lexical enviromnet with code|||||||||||||||||||||||||
+
+||||function scopes
+function outer() {
+  var x = 10;
+  
+  function inner() {
+    var y = 20;
+    console.log(x + y);
+  }
+  
+  inner(); // prints 30
+}
+
+outer();
+
+||lexical scope
+
+function outer() {
+  var x = 10;
+  
+  function inner() {
+    var y = 20;
+    console.log(x + y);
+  }
+  
+  return inner;
+}
+
+var innerFunc = outer();
+innerFunc(); // prints 30

@@ -1,0 +1,111 @@
+//MiddleWare in node.js
+
+.::Middel a function work req and res
+
+.middelware function are function that have access to the request object
+(req) the response object (res)and the next middleware  function int he application
+
+
+.||execute any code
+.||make change to the request and the respose objects
+.||end the request-respone cycle
+.||call the next middleWare function in the stack
+
+|||Types of middleWare  use in node.js
+
+.||Application
+.||router-level middleware
+.||error-handling middle
+.||built-in middleware
+
+
+const express = require("express");
+const fs = require("fs");
+const app = express();
+const port = 9000;
+
+app.get("", (req, res, next) => {
+  console.log("jugal middle");
+
+  fs.appendFile("text", `\n ${Date.now()}: ${req.ip} ${req.url} ${req.method} ${req.path} `, (err) => {
+    if (err) throw err;
+    console.log("File written successfully");
+  });
+  next();
+});
+
+app.get("/test", (req, res, next) => {
+  res.send("hi i  middles");
+  next();
+});
+
+app.get("/home", (req, res) => {
+  res.send("middleware");
+});
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
+
+
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+Qwhat is hhtp headers?
+
+ANS::Harder are extra information Http headers are an important part of the
+api request and respone as they represent the meta data associated with api request and respone
+
+.header carry information for the reuest and respone body
+
+const express = require("express");
+const fs = require("fs");
+const app = express();
+const port = 9000;
+
+
+# app.get("/", (req, res) => {
+#     // res.setHeader("X-Names", "jugal sharma"); // this code good 
+#     console.log(req.headers)
+#     res.send("jugal sharma");
+#     // res.setHeader('Cookie', ['type=ninja', 'language=javascript']);
+#   });
+
+# app.listen(port, () => {
+#   console.log(`Server is running on port ${port}`);
+# });
+
+
+|||||||||||||||||||||||||||||||||||||||||||||||||
+
+Qwhat status code
+
+AND::status 404
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+
+Informational responses (100 – 199) // 
+Successful responses (200 – 299) // successfully done
+Redirection messages (300 – 399) // 
+Client error responses (400 – 499) /// form information wore
+||BadRequest
+||401 unauthorized users
+
+
+
+Server error responses (500 – 599) /// mongodb respone
+||500 internal server error
+
+
+
+
+# https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+Q::File upload with Node.js and multers?
+
+ANS::
+
+
+
+Qwhat is cores in node.js?
+Ans::

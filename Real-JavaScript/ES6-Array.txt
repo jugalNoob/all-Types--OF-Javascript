@@ -1,0 +1,204 @@
+1::Arrow functions: a more concise way to define functions using the => syntax.
+2::Block-scoped variables: the let and const keywords were introduced to define variables with block scope.
+3::Template literals: a new way to concatenate strings using backticks and interpolation.
+4::Destructuring: a way to extract values from objects or arrays into separate variables.
+5::Default function parameters: the ability to specify default values for function parameters.
+6::Rest and spread operators: the ... syntax can be used to collect arguments into an array or to spread an array into individual arguments.
+7::Classes: a new syntax for defining classes with inheritance.
+8::Promises: a built-in way to handle asynchronous operations.
+9::Modules: a way to organize code into separate files and import/export functionality between them.
+10::These features and more have made JavaScript more powerful and easier to use. They have also brought the language closer to other object-oriented programming languages, making it more accessible to developers from other backgrounds.
+
+
+
+
+
+User
+javascript es6 code with all code example
+ChatGPT
+Here is an example of JavaScript ES6 code that includes all of the features I mentioned in my previous answer:
+
+csharp
+Copy code
+// Arrow functions
+const add = (x, y) => x + y
+
+
+
+
+
+//aray es6 destructuring//////////////////////////
+let a=["jugal" , "sharmna" , "knaika" , "karan0"]
+let[top1 , top2 , tip3 , top4]=a
+let[top11,,,top44]=a
+console.log(top1)
+console.log(top4)
+console.log(top44)
+
+
+//swap/////////////////////////////
+// a=5;b=10;
+// b=5;a=10;
+// console.log(a ,b)
+let a=5;
+let b=10;
+let temp=a
+a=b;
+b=temp;
+temp=a;
+console.log(a , b)
+[a,b]=[b,a]
+console.log(a ,b)
+
+
+
+///////////////////////object destructing
+let object={
+    name:"jugal",
+    classs:"10th",
+    roll:"23"
+}
+let{name, classs, roll}=object;
+console.log(object)
+
+console.log(name)
+console.log(classs)
+
+
+//defult parmenter//////////////////////
+
+function one(a ,b=2){
+
+    console.log(a*b)
+}
+one(4)
+
+///////////rest parameter//////////////////////
+function one(a , b){
+console.log(a ,b)
+}
+one(4 , 2,47586687679)
+
+
+function sum(...input){
+    console.log(input)
+}
+
+sum(1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9)
+
+
+//////////////spared opraet...
+
+function two(){
+
+}
+
+let a=[5 , 5 , 6]
+let b=[7 , 80 , 9]
+
+console.log(...a , ...b)
+
+|||||||||||||||||||||||||||
+
+// Using destructuring assignment
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 30,
+};
+const { firstName, lastName } = person;
+
+
+// Arrow functions
+const add = (x, y) => x + y;
+console.log(add(2, 3)); // Output: 5
+
+// Block-scoped variables
+let a = 10;
+if (true) {
+  let a = 20;
+  console.log(a); // Output: 20
+}
+console.log(a); // Output: 10
+
+const b = 30;
+if (true) {
+  const b = 40;
+  console.log(b); // Output: 40
+}
+console.log(b); // Output: 30
+
+// Template literals
+const name = "John";
+console.log(`Hello, ${name}!`); // Output: Hello, John!
+
+// Destructuring
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 30,
+};
+const { firstName, lastName, age } = person;
+console.log(`${firstName} ${lastName} is ${age} years old.`); // Output: John Doe is 30 years old.
+
+const numbers = [1, 2, 3, 4, 5];
+const [first, second, ...rest] = numbers;
+console.log(first); // Output: 1
+console.log(second); // Output: 2
+console.log(rest); // Output: [3, 4, 5]
+
+// Default function parameters
+const greet = (name = "World") => `Hello, ${name}!`;
+console.log(greet()); // Output: Hello, World!
+console.log(greet("John")); // Output: Hello, John!
+
+// Rest and spread operators
+const numbers1 = [1, 2, 3];
+const numbers2 = [4, 5, 6];
+const numbers3 = [...numbers1, ...numbers2];
+console.log(numbers3); // Output: [1, 2, 3, 4, 5, 6]
+
+const sum = (...args) => args.reduce((total, current) => total + current, 0);
+console.log(sum(1, 2, 3)); // Output: 6
+
+// Classes and inheritance
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+
+  speak() {
+    console.log(`${this.name} makes a noise.`);
+  }
+}
+
+class Dog extends Animal {
+  speak() {
+    console.log(`${this.name} barks.`);
+  }
+}
+
+const dog = new Dog("Rex");
+dog.speak(); // Output: Rex barks.
+
+// Promises
+const fetchUsers = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const users = ["John", "Jane", "Bob"];
+      resolve(users);
+    }, 2000);
+  });
+};
+
+fetchUsers()
+  .then((users) => console.log(users)) // Output: ["John", "Jane", "Bob"]
+  .catch((error) => console.log(error));
+
+// Modules
+// Module1.js
+export const addNumbers = (x, y) => x + y;
+
+// Module2.js
+import { addNumbers } from "./Module1.js";
+console.log(addNumbers(2, 3)); // Output: 5

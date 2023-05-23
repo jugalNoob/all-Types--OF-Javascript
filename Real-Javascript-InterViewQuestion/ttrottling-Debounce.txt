@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="index.js"></script> -->
+
+    <style>
+        * {
+            font-family: "Lexend Deca Medium";
+        }
+    
+        body {
+            height: 200vh;
+        }
+    
+        section {
+            position: fixed;
+        }
+    
+        p {
+            font-size: 3rem;
+        }
+    </style>
+</head>
+<body onscroll="showCount()">
+
+    
+    <section>
+        <p class="n_count">Normal Count</p>
+        <p class="t_count">Throttle Count</p>
+        <p class="d_count">Debounce Count</p>
+    </section>
+
+
+    <script>
+        
+
+
+const normal_div = document.querySelector('.n_count');
+const throttle_div = document.querySelector('.t_count');
+const debounce_div = document.querySelector('.d_count');
+let n_cnt = 0;
+let t_cnt = 0;
+let d_cnt = 0;
+let isScrolling = true;
+
+const normalCount = () => {
+    n_cnt++;
+    normal_div.innerHTML = `Normal Count: ${n_cnt}`;
+}
+
+const throttleCount = () => {
+
+    if (isScrolling === true) {
+
+        t_cnt++;
+        throttle_div.innerHTML = `Throttle Count: ${t_cnt}`;
+        isScrolling = false;
+        setTimeout(() => {
+           isScrolling = true;
+        }, 1000)
+
+    }
+}
+
+let interval;
+
+const  debounceCount = () => {
+    clearTimeout(interval);
+
+    interval = setTimeout(() => {
+        d_cnt++;
+        debounce_div.innerHTML = `Debounce Count: ${d_cnt}`;
+    },1000)
+}
+
+
+
+const showCount = () => {
+    normalCount();
+    throttleCount();
+    debounceCount();
+}
+
+    </script>
+</body>
+</html>
+
+
+
+|||||||||||||||||||||||React version ||||||||||||||||||||||||||
+
+import React, { useState } from 'react';
+import './ScrollCounter.css'; // Import the CSS styles
+
+const ScrollCounter = () => {
+  const [normalCount, setNormalCount] = useState(0);
+  const [throttleCount, setThrottleCount] = useState(0);
+  const [debounceCount, setDebounceCount] = useState(0);
+  const [isScrolling, setIsScrolling] = useState(true);
+
+  const normalCountHandler = () => {
+    setNormalCount(prevCount => prevCount + 1);
+  };
+
+  const throttleCountHandler = () => {
+    if (isScrolling) {
+      setThrottleCount(prevCount => prevCount + 1);
+      setIsScrolling(false);
+      setTimeout(() => {
+        setIsScrolling(true);
+      }, 1000);
+    }
+  };
+
+  let interval;
+
+  const debounceCountHandler = () => {
+    clearTimeout(interval);
+
+    interval = setTimeout(() => {
+      setDebounceCount(prevCount => prevCount + 1);
+    }, 1000);
+  };
+
+  const showCount = () => {
+    normalCountHandler();
+    throttleCountHandler();
+    debounceCountHandler();
+  };
+
+  return (
+    <div className="scroll-counter" onScroll={showCount}>
+      <section>
+        <p className="n_count">Normal Count: {normalCount}</p>
+        <p className="t_count">Throttle Count: {throttleCount}</p>
+        <p className="d_count">Debounce Count: {debounceCount}</p>
+      </section>
+    </div>
+  );
+};
+
+export default ScrollCounter;

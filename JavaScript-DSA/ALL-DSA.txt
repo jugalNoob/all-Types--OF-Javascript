@@ -1,0 +1,720 @@
+Sort
+
+let data=[9 , 8 , 7 , 6 , 5 , 4 , 3 , 2 , 1];
+
+
+for(let i=0; i<data.length; i++){
+
+    for(let j=0; j<data.length; j++){
+
+        if(data[j]>data[j+1]){
+
+            let temp=data[j];
+
+            data[j]=data[j+1]
+
+            data[j+1]=temp
+        }
+    }
+}
+
+
+console.log(data)
+//////////////////////////////
+Search
+///////////////////////////////
+// // console.log(  checkAnnar("hello" , "olle"))
+let data=[10 , 20 , 30 , 540]
+
+let searc=540;
+
+let ko=undefined;
+
+for(let i=0; i<data.length; i++){
+
+    if(searc == data[i]){
+
+        ko=i
+    }
+
+}
+
+console.log(ko)
+
+//////////////////////////////
+Merge///////
+///////////////////////////
+
+
+let data1=[1 , 2  , 2 , 3]
+let data2=[7 , 8 , 9 , 10]
+let data3=[]
+for(let i=0; i<data1.length; i++){
+    data3[i]=data1[i]
+}
+console.log(data3)
+for(let i=0; i<data2.length; i++){
+    data3[data1.length+i]=data2[i]
+}
+console.log(data3)
+
+/////////////////////////
+deleting
+///////////////////////////
+// // console.log(  checkAnnar("hello" , "olle"))
+let data=[10 , 20 , 30 , 540]
+
+let del=0;
+
+for(let i=0; i<data.length; i++){
+
+    data[i]=data[i+1]
+
+}
+
+data.length=data.length-1;
+
+console.log(data)
+
+/////////////////////////////////
+Minimum
+///////////////////////////////////
+
+
+
+let data=[10 , 20 , 30 , 40 ];
+
+let mini=data[0];
+
+for(let i=0; i<data.length; i++){
+
+    if(data[i] > mini){
+
+        mini=data[i];
+    }
+}
+
+
+console.log(mini)
+
+
+
+////////////////////////////////////
+Maxmum
+//////////////////////////////////////
+splitting
+let originalArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+let newArray1 = [];
+let newArray2 = [];
+
+for (let i = 0; i < originalArray.length; i++) {
+  if (originalArray[i] <= 5) {
+    newArray1.push(originalArray[i]);
+  } else {
+    newArray2.push(originalArray[i]);
+  }
+}
+
+console.log(newArray1); // [1, 2, 3, 4, 5]
+console.log(newArray2); // [6, 7, 8, 9]
+
+//////////////////////
+Inserting///
+/////////////////////
+
+
+let data=[ 9 , 8 , 7 , 6 , 5 , 4 , 3 , 2 , 1,0,100 ]
+
+console.log(data.length)
+let add=69;
+
+let post=0;
+
+for(let i=data.length-1; i>=0; i--){
+
+    if(i>=post){
+        
+        data[i+1]=data[i]
+    }if(i==post){
+
+        data[i]=add;
+    }
+
+}
+
+console.log(data)
+
+
+/////////////////////////////
+Fisher-Yates Shuffer Algo
+///////////////////////////
+
+
+///////////////////////////
+Anagram
+function  checkAnnar(str1 , str2){
+
+    let objectstr={};
+if(str1.length !== str2.length){
+    return false;
+}
+for(ch of str1){
+    // console.log(ch)
+    objectstr[ch]=(objectstr[ch] || 0) + 1;
+}
+// console.log(objectstr)
+for(ch of str2){
+    // console.log(objectstr[ch])
+    if(!objectstr[ch]){
+        return false  
+    }
+objectstr[ch]--
+}
+return true
+// console.log(objectstr)
+
+}
+// console.log(  checkAnnar("hello" , "olle"))
+
+console.log(  checkAnnar([1 , 2 , 3], [3 , 2 , 1,0]))
+
+
+///////////////////////////
+Fisher-Yates Shuffer Algo
+/////////////////////////////
+
+function fisherYatesShuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+  const myArray = [1, 2, 3, 4, 5];
+  const shuffledArray = fisherYatesShuffle(myArray);
+  console.log(shuffledArray); // Output: [5, 2, 4, 1, 3] (random order)
+
+
+
+////////////////////////////
+Palindrome string 
+///////////////////////////
+
+  
+function pali(data){
+let start=0;
+
+let end=data.length -1;
+
+let result=true;
+while(end>start){
+
+    if(data[start] !=data[end]){
+     
+        result=false;
+    }
+    start++;
+    end--;
+}
+
+return result;
+}
+
+
+let str="hello"
+
+console.log(pali(str))
+
+
+/////////////////////////////
+Maximum occurring
+////////////////////////////
+let str="jugal hello world jjjj";
+
+let strObj={};
+
+let maxkey="";
+
+for(let i=0; i<str.length; i++){
+
+    let key=str[i];
+    if(!strObj[key]){
+
+strObj[key]=0;
+    }
+    strObj[key]++;
+
+    if(maxkey == "" || strObj[key] > strObj[maxkey]){
+        maxkey=key;
+    }
+    
+}
+
+console.log(maxkey)
+
+console.warn(strObj)
+
+
+///////////////////////////////////////////////
+Selection Sort
+///////////////////////////////////////////
+
+
+   let items = [20, 12, 53, 3,56,78,0,5,89,34];
+      function selectionSort(data) {
+        let minId;
+        for (let i = 0; i < data.length; i++) {
+          minId = i;
+          for (let j = i + 1; j < data.length; j++) {
+            if (data[j] < data[minId]) {
+              minId = j;
+            }
+          }
+          let temp = data[minId];
+          data[minId] = data[i];
+          data[i] = temp;
+        }
+      }
+
+      selectionSort(items);
+      console.warn(items)
+
+
+      ///////////Resvers array //////////////////////!SECTION
+
+      let data = [10, 20, 30, 40, 50];
+let start = 0;
+let end = data.length - 1;
+
+while (start < end) {
+  let temp = data[start];
+  data[start] = data[end];
+  data[end] = temp;
+  start++;
+  end--;
+}
+
+console.log(data);
+
+
+/////////////////////////////////////
+Binary Search with Iterative approac
+///////////////////////////////////////
+         let data = [5, 9, 13, 17,45,67,89,100];
+      let find = 89;
+      let start = 0;
+      let end = data.length - 1;
+      let position = undefined;
+      while (start <= end) {
+        let mid = Math.floor((start + end) / 2);
+        // console.warn(data[mid]);
+        if (data[mid] === find) {
+          position = mid;
+          break;
+        } else if (data[mid] < find) {
+          start = mid + 1;
+        } else {
+          end = mid - 1;
+        }
+      }
+      console.warn(position)
+
+
+////////////////////////////////////
+Insertion Sort in JavaScript
+/////////////////////////////
+
+     let arr = [12, 11, 13, 5, 6];
+      function insertionSort(data) {
+        let i, current, j;
+        for (i = 1; i < data.length; i++) {
+          current = data[i];
+          j = i - 1;
+          while(j>=0 && data[j]>current){
+            data[j+1]=data[j];
+            j=j-1;
+
+
+          }
+          data[j+1]=current
+        }
+      }
+
+      insertionSort(arr);
+      console.warn(arr)
+
+
+      ///////////////////////////////////////////
+
+
+      /////////////////////////////////////////////
+
+      Bubble sort: Simple to implement, but inefficient for large data sets.
+
+Selection sort: Simple to implement, but inefficient for large data sets.
+
+Insertion sort: Simple to implement, efficient for small data sets or partially sorted data.
+
+Merge sort: Efficient for large data sets, but requires additional memory.
+
+Quick sort: Efficient for large data sets, but worst-case complexity can be a concern.
+
+Heap sort: Efficient for large data sets, but not as widely used as other algorithms.
+
+///////////////////////////////////////////////
+
+
+
+//check array are equal ////////////!SECTION
+
+
+function arraysAreEqual(arr1, arr2) {
+    // Check if the arrays have the same length
+    if (arr1.length !== arr2.length) {
+      return false;
+    }
+  
+    // Compare each element in the arrays
+    for (let i = 0; i < arr1.length; i++) {
+      if (arr1[i] !== arr2[i]) {
+        return false;
+      }
+    }
+  
+    // If all elements match, the arrays are equal
+    return true;
+  }
+  
+  // Example usage
+  const arr1 = [1, 2, 3];
+  const arr2 = [1, 0, 3];
+  const arr3 = [1, 2, 4];
+  
+  console.log(arraysAreEqual(arr1, arr2)); // Output: true
+  console.log(arraysAreEqual(arr1, arr3)); // Output: false
+
+/////////////////////ANCHOR - array to string and string to array
+
+
+// Example: Reversing an array of integers and returning a string
+function reverseIntArray(arr) {
+  // Reverse the array
+  arr.reverse();
+
+  // Convert the reversed array to a string
+  const reversedString = arr.join(",");
+
+  // Return the reversed string
+  return reversedString;
+}
+
+// Example usage
+const myArray = [1, 2, 3, 4, 5];
+const reversedArrayString = reverseIntArray(myArray);
+console.log(reversedArrayString); // "5,4,3,2,1"
+
+// Example: Converting a string of comma-separated integers to an array of integers
+function stringToIntArray(str) {
+  // Split the string into an array of strings
+  const strArray = str.split(",");
+
+  // Convert each string to an integer and store in a new array
+  const intArray = strArray.map((numStr) => parseInt(numStr));
+
+  // Return the array of integers
+  return intArray;
+}
+
+// Example usage
+const myString = "5,4,3,2,1";
+const myIntArray = stringToIntArray(myString);
+console.log(myIntArray); // [5, 4, 3, 2, 1]
+
+
+////////Second string to array and array tot array //!SECTION
+
+
+const fruits = ["apple", "banana", "cherry"];
+const fruitsString = fruits.join(","); //
+
+
+const fruitsString = "apple,banana,cherry";
+const fruits = fruitsString.split(","); // ["apple", "banana", "cherry"]
+
+
+
+
+//Reverse array in Javascript
+
+
+
+let data=[10 , 20 , 30 , 40 , 50 , 60]
+
+let temp;
+
+function coumters(data,start , end){
+
+
+
+    if(start <=end){
+        temp=data[start]
+        data[start]=data[end]
+        data[end]=temp;
+    
+        coumters(data , start+1  , end -1)
+
+    }
+    console.log(data)
+
+}
+
+coumters(data, 0 , data.length -1)
+
+////////////Swap Links//!SECTION -- React.JavaScript
+import React,{useState} from 'react'
+
+function App() {
+
+  const [user1 , setUser1] = useState([]);
+  const [user2 , setUser2] = useState([]);
+
+  const Swaper=()=>{
+    let array1 = [user1]; // make a copy of user1 array
+    let array2 = [user2]; // make a copy of user2 array
+    
+    // Print the original arrays
+    console.log("Array 1: " + array1);
+    console.log("Array 2: " + array2);
+    
+    // Swap the arrays using a loop
+    for (let i = 0; i < array1.length; i++) {
+      let temp = array1[i];
+      array1[i] = array2[i];
+      array2[i] = temp;
+    }
+
+    
+    // Print the swapped arrays
+    console.log("Swapped Array 1: " + array1);
+    console.log("Swapped Array 2: " + array2);
+  }
+ 
+
+  return (
+    <div>
+<input type="text" name="" id="" onChange={(e)=>setUser1(e.target.value)} />
+<br />
+
+<input type="text" name="" id="" onChange={(e)=>setUser2(e.target.value)} />
+<br />
+<button onClick={Swaper}>swap</button>
+    </div>
+  )
+}
+
+export default App
+
+
+//Stack //!SECTION
+
+import React,{useState} from 'react'
+
+function App() {
+
+  const [user1 , setUser1] = useState([]);
+  const [user2 , setUser2] = useState([]);
+  class Stack {
+    item = [];
+    currentSize;
+    maxSize;
+    constructor(size) {
+      this.maxSize = size;
+      this.currentSize = this.item.length;
+    }
+    push(newVal) {
+        if(this.currentSize>=this.maxSize){
+            alert("stack is full");
+        }else{
+            this.item[this.currentSize]=newVal;
+            this.currentSize++;
+        }
+    }
+    pop() {
+        if(this.currentSize>0){
+            this.currentSize--;
+            this.item.length=this.currentSize;
+        }else{
+            alert("stack is already empty")
+        }
+    }
+    display() {
+        console.warn(this.item)
+    }
+  }
+  let st1 = new Stack(5);
+
+
+  st1.push(10)
+  st1.push(30)
+  st1.push(40)
+  st1.push(50)
+  st1.push(60)
+  st1.pop()
+  st1.display();
+
+  console.log(st1)
+  // class Stack{
+
+  //   array=[]
+  //   current;
+  //   size=5;
+
+  // constructor(size){
+
+  //   this.size=size
+  //   this.current=this.array.length
+  // }
+
+  // push(user1){
+
+  //   this.array[this.current]=user1;
+
+  //   this.current++;
+  // }
+  // pop() {
+  //   if (this.current === 0) {
+  //     return undefined;
+  //   }
+  //   this.current--;
+  //   const poppedItem = this.array[this.current];
+  //   this.array.length = this.current;
+  //   return poppedItem;
+  // }
+
+  // display(){
+  //   console.log(this.array)
+  // }
+  // }
+
+  // const stack = new Stack();
+  
+  // const handleClick = () => {
+  //   stack.push(user1);
+  //   stack.display();
+  //   console.log(stack)
+
+  // };
+
+  // const Pops=()=>{
+  //   stack.pop();
+  //  stack.display();
+  //   console.log(stack);
+  // }
+  return (
+    <div>
+{/* <input type="text" name="" id="" onChange={(e)=>setUser1(e.target.value)} />
+<br />
+<button onClick={handleClick}>click</button>
+
+<br />
+<button onClick={Pops}>pops</button> */}
+    </div>
+  )
+}
+
+export default App
+
+
+////|||||||||||||||||||||/Prototypes are mechanism by which javascript objects inheriet featres from one another
+
+// object.prototype.myappes="jugal sharma"
+
+
+
+let user={
+
+    getFullname:function(){
+    
+        return this.name+ " " + this.lastName
+    },
+
+    getAge:function(){
+
+        let age=new Date().getFullYear()-this.birth
+    
+        return age
+    }
+
+}
+
+let student={
+name:"jugal",
+lastName:"sidhu",
+birth:2000,
+getAge:user.getAge
+
+
+}
+
+
+
+let teacher={
+    name:"jonny",
+    lastName:"sins",
+    birth:1980, 
+    getAge:user.getAge // same teacher.__proto__=user;
+  
+
+  
+    }
+
+//     teacher.__proto__=user;
+//    student.__proto__=user;
+
+
+   
+
+    console.log(teacher.getAge())
+    console.log(student.getAge())
+
+
+
+
+//lexical scop|||||||||||||||||||||||||||
+
+
+let a={
+    list:"friend",
+    name:['bruce' , "peter" , "sam"],
+
+    getAll:function(){
+
+        // console.log(this.list)
+
+        // let that=this.list;
+
+        this.name.map((items)=>{
+
+            console.log(this.list,items)
+        })
+    }
+}
+
+
+a.getAll()
+// console.log(a.getAll())
+
+
+var name="jugal sharma";
+
+function two(){
+
+    var name="jugal";
+
+    console.log(name)
+}
+
+
+two();
+
+console.log(name)

@@ -1,0 +1,184 @@
+Types of function 
+
+1:Function declarations
+
+function add(x, y) {
+  return x + y;
+}
+
+2::Function expressions:
+
+const add = function(x, y) {
+  return x + y;
+}
+
+
+3::Arrow functions: 
+
+const add = (x, y) => x + y;
+
+
+4::Immediately Invoked Function Expressions (IIFEs): 
+(function() {
+  console.log('Hello, world!');
+})();
+
+
+5::Methods: These are functions
+
+const person = {
+  name: 'John',
+  greet: function() {
+    console.log(`Hello, my name is ${this.name}.`);
+  }
+};
+
+person.greet(); // outputs "Hello, my name is John."
+
+
+7:::: here's an example of a higher-order function in JavaScript:
+
+function multiplyBy(factor) {
+  return function(x) {
+    return x * factor;
+  }
+}
+
+const double = multiplyBy(2);
+const triple = multiplyBy(3);
+
+console.log(double(5)); // Outputs 10
+console.log(triple(5)); // Outputs 15
+
+
+
+//Heigh order function 
+const person = {
+  name: 'John',
+  age: 30,
+  greet: function(greeting) {
+    console.log(greeting + ', my name is ' + this.name);
+  }
+};
+
+const greetJohn = person.greet.bind(person, 'Hello');
+
+greetJohn(); // Output: 'Hello, my name is John'
+
+const one=(a)=>console.log(a)
+
+one("jugal sharma")
+
+
+
+
+//Closures use Case||||||||||||||||||||||||||||||||||||||
+
+function one(){
+  let i=10;
+  function two(){
+    console.log(i)
+  }
+  two()
+}
+
+one()
+function addre(num){
+  function add(b){
+    console.log(num +b)
+  }
+  return add
+}
+const addto=addre(5)
+addto(8)
+console.log(addto)
+
+
+//currying ///!SECTION////////////////////////////ANCHOR - 
+function get(a){
+  return function(b){
+    return function(c){
+      return function(d){
+console.log(a , b , c , d)
+      }
+    }
+  }
+}
+get(5)(5)(5)(5)
+
+
+function sendEmails(to){
+  return function(subject){
+    return function(body){
+      console.log( "sending email" , to ,  "with" ,  subject , " this is my body" , body)
+    }
+  }
+}
+
+let step1=sendEmails("jugal@gmail.com")
+let step2=step1("new order conformation")
+step2("hey jugal  , what going on")
+
+const add=(a)=>(b)=>(c)=>(d)=>a+b+c+d
+console.log(add(5)(5)(5)(5))
+
+
+
+///async await  ////////////////////////!SECTION
+
+ async function All(){
+  console.log("1 message")
+  await console.log("2 message")
+  console.log("3 message")
+  console.log("4 message")
+}
+console.log("5 message")
+All()
+console.log("6 message")
+
+
+
+3::async/await: A syntax for writing asynchronous
+function getUser(id) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const user = { id: id, name: 'John' };
+      resolve(user);
+    }, 2000);
+  });
+}
+
+async function printUserName(id) {
+  try {
+    const user = await getUser(id);
+    console.log(user.name);
+  } catch (error) {
+    console.log('Error:', error);
+  }
+}
+
+
+||||Function high order function |||||||||||||||
+1:function which tackes another function as an arguments is called HOF
+
+const add=(a , b)=>{
+return a+b
+}
+
+
+
+2:CallBack function function which get passed as an argument to anthor function is called CBF
+
+
+const add=(a ,b)=>{
+    return a +b
+}
+const mult=(a ,b)=>{
+    return a * b
+}
+const calu=(num1 , num2 , operat)=>{
+    return operat(num1 , num2)
+}
+
+console.log(calu(5 , 5  ,add))
+console.log(calu(5 , 5  ,mult))

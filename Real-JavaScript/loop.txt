@@ -1,0 +1,72 @@
+
+:::loop
+////////////////////////////////////////////
+ var num = 20;
+ do{
+   debugger;
+   console.log(num); //infinte loop
+   num++;
+ }while(num <= 10);
+
+
+ :::forLoop
+for(let a=0; a<10; a++){
+
+    console.log(a)
+}
+
+:::while Loop
+let a=0;
+
+while(a<10){
+
+    console.log(a)
+
+    a++;
+}
+
+
+///reverse Loop////!SECTION
+
+
+
+for(let i=10; i>=0; i--){
+
+    console.log(i)
+}
+
+
+let i= 20;
+
+while(i>=0){
+  console.log("sharma world)
+
+  i---
+}
+
+:::::::::::::Nasting --LoOp////////////////////////////
+ var arr = [[1,2], [3,4], [5,6]];
+ for (var i=0; i < arr.length; i++) {
+  for (var j=0; j < arr[i].length; j++) {
+    console.log(arr[i][j]);
+  }
+}
+
+
+for(let i=0; i<10; i++){ // odd number
+
+    if( i%2 !=0){
+        console.log(i)
+    }
+
+
+}
+
+for(let i=0; i<10; i++){ //even number
+
+    if( i%2 ==0){
+        console.log(i)
+    }
+
+
+}

@@ -1,0 +1,182 @@
+|||||||||||If Else|||||||||||||||
+
+import React, { useState } from 'react';
+
+function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleClick = () => {
+    setIsLoggedIn(!isLoggedIn);
+  };
+
+  return (
+    <div>
+      <button onClick={handleClick}>
+        {isLoggedIn ? 'Log out' : 'Log in'}
+      </button>
+      {isLoggedIn ? <WelcomeMessage /> : <LoginPage />}
+    </div>
+  );
+}
+
+
+
+import React, { useState } from 'react';
+
+function App() {
+  const [showElement, setShowElement] = useState(false);
+
+  const handleClick = () => {
+    setShowElement(!showElement);
+  };
+
+  return (
+    <div>
+      <button onClick={handleClick}>
+        {showElement ? 'Hide Element' : 'Show Element'}
+      </button>
+      {showElement && <p>This is the element to be shown or hidden.</p>}
+    </div>
+  );
+}
+
+||||||||||Inline Link condition|||||||||||
+
+Inline Conditional Rendering:
+
+import React from 'react';
+
+function App() {
+  let condition = true;
+
+  return (
+    <div>
+      {condition ? <p>Condition is true</p> : <p>Condition is false</p>}
+    </div>
+  );
+}
+
+export default App;
+
+
+||||||Ternary Operator:|||||||||
+
+import React from 'react';
+
+function App() {
+  let condition = true;
+  let message = condition ? 'Condition is true' : 'Condition is false';
+
+  return (
+    <div>
+      <p>{message}</p>
+    </div>
+  );
+}
+
+export default App;
+
+
+
+||||||||Conditional Rendering Outside JSX:
+
+
+import React from 'react';
+
+function App() {
+  let condition = true;
+
+  let content;
+  if (condition) {
+    content = <p>Condition is true</p>;
+  } else {
+    content = <p>Condition is false</p>;
+  }
+
+  return (
+    <div>
+      {content}
+    </div>
+  );
+}
+
+export default App;
+
+
+|||||||||||||
+
+import React from 'react';
+
+function App() {
+  let isLoggedIn = true;
+
+  return (
+    <div>
+      {isLoggedIn && <p>Welcome, User!</p>}
+      {!isLoggedIn && <p>Please log in.</p>}
+    </div>
+  );
+}
+
+export default App;
+Conditional Rendering with Logical AND (&&):
+
+
+
+
+|||||||||||Important ||||||||||||
+
+import React, { useState } from 'react';
+
+function ToggleButton() {
+  const [isOn, setIsOn] = useState(false);
+
+  const handleToggle = () => {
+    setIsOn(!isOn);
+  };
+
+  return (
+    <div>
+      <button onClick={handleToggle}>
+        {isOn ? 'Turn Off' : 'Turn On'}
+      </button>
+      <p>{isOn ? 'The button is ON' : 'The button is OFF'}</p>
+    </div>
+  );
+}
+
+export default ToggleButton;
+
+
+
+||||||\||||||Conditional Rendering||||||||||||||||||||||
+
+
+import React,{useState , useEffect} from 'react'
+
+function App() {
+
+  // const [log , setlogin]=useState(true)
+  const [log , setlogin]=useState(1)
+  
+//   if(log){
+// console.log("jugal")
+//   }else{
+// console.log("kanika")
+//   }
+
+  return (
+    <div>
+{/* 
+{log ? <h1>wlcome jugal</h1> : <h1>welcome kanika</h1>} */}
+
+{log == 1 ? <h1>one</h1> : log == 2  ?  <h1>two</h1> : <h1>false</h1>}
+
+    </div>
+  )
+}
+
+export default App
+
+
+

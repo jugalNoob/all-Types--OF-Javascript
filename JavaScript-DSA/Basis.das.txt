@@ -1,0 +1,158 @@
+Arrays
+Linked Lists
+Stacks and Queues
+Trees (Binary Trees, Binary Search Trees, AVL Trees, etc.)
+Graphs (DFS, BFS, Minimum Spanning Tree, Shortest Path algorithms, etc.)
+Hash Tables
+Sorting Algorithms (Bubble Sort, Insertion Sort, Merge Sort, Quick Sort, Heap Sort, etc.)
+Searching Algorithms (Linear Search, Binary Search, etc.)
+Recursion
+Dynamic Programming
+Big O notation and Time Complexity Analysis
+
+
+/// Array dsa 
+
+Accessing elements at a given index.
+Traversing an array to perform a certain operation on each element.
+Sorting and searching arrays.
+Inserting and deleting elements from an array.
+Merging and splitting arrays.
+
+Sort
+Search
+Merge
+deleting
+Minimum
+Maxmum
+splitting
+Inserting
+
+let data=[ 9 , 8 , 7 , 6 , 5 , 4 , 3 , 2 , 1,0,100 ]
+
+console.log(data.length)
+let add=69;
+
+let post=0;
+
+for(let i=data.length-1; i>=0; i--){
+
+    if(i>=post){
+        
+        data[i+1]=data[i]
+    }if(i==post){
+
+        data[i]=add;
+    }
+
+}
+
+console.log(data)
+
+
+console.log(data)
+let arr = [1, 2, 4, 5];
+arr.splice(2, 0, 3); // inserts 3 at index 2
+console.log(arr); // output: [1, 2, 3, 4, 5]
+
+let arr = [1, 2, 3, 4, 5]; // the original array
+let index = 2; // the index where we want to insert the new element
+let value = 10; // the value of the new element we want to insert
+
+// loop through the array from the end to the insertion index
+for (let i = arr.length - 1; i >= index; i--) {
+  // shift each element to the right
+  arr[i + 1] = arr[i];
+}
+
+// insert the new element at the insertion index
+arr[index] = value;
+
+console.log(arr); // [1, 2, 10, 3, 4, 5]
+
+
+Trie: A trie is a tree-like data structure that is used to store strings. It is particularly useful for searching for strings and performing string-related operations efficiently.
+
+KMP Algorithm: The Knuth-Morris-Pratt (KMP) algorithm is a string searching algorithm that is used to find a substring within a larger string. It is particularly useful for finding patterns in large texts.
+
+Rabin-Karp Algorithm: The Rabin-Karp algorithm is a string searching algorithm that is used to find a substring within a larger string. It is particularly useful for finding patterns in large texts.
+
+Manacher's Algorithm: Manacher's algorithm is used to find the longest palindromic substring in a given string. It can be used to solve several string-related problems.
+
+Suffix Array: A suffix array is a data structure that is used to store all the suffixes of a given string. It can be used to solve several string-related problems, such as finding the longest common substring.
+
+Z Algorithm: The Z algorithm is used to find all occurrences of a pattern in a given string. It is particularly useful for searching for patterns in large texts.
+
+These are some of the most important data structures and algorithms that are commonly used in the context of strings.
+
+
+
+////////////////////////////////\\\\\\\\\\\\\\\\\\\
+
+Recursion in-Direct
+
+
+
+// Direct recursion:
+
+// Indirect recursion: 
+
+// Tail recursion:
+
+// Non-tail recursion: 
+
+// Linear recursion:
+
+// Tree recursion:
+// Mutual recursion: 
+
+
+//////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//Recursion 
+// function Apple(x){
+
+
+//     console.log(x)
+
+//     if(x<10){
+//         Apple(x +1)
+//     }
+
+ //// revers
+
+ if(x > 10){
+
+    Apple(x-1)
+ }
+// }
+
+// let data=0;
+//  Apple(data)
+
+
+
+ ///Factorial\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+ function factorial(n){
+    if(n < 0){
+        return "number has to be positive."
+    }
+    //base case
+    if(n == 0 || n == 1){
+        return 1;
+    //recursive case
+    }else{
+        return n * factorial(n-1);
+    }
+}
+let n = 5;
+answer = factorial(n)
+console.log("Factorial of " + n + " : " + answer);
+
+let spider=["batman" , "iron man" , "spider" , "vision"]
+
+
+
+///////////////////Indirect recursion\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+
